@@ -1,0 +1,41 @@
+Instance Video
+Instance:
+e.g. emp1 = Employee() --> class, emp2 = Employee
+emp1 and emp2 are diff instance
+
+Constructor: __init__
+
+Method : def fullname(self):
+
+emp1 = Employee('Corey', 'Schafer', 5000)
+emp1.fullname() --> Instance.method
+or Employee.fullname(emp1) --> Class.method(instance). The instance is 'self'
+
+Class Video:
+Employee.__dict__ : list of attributes
+class Employee:
+    num_of emps = 0 --> class variable (also shown in the dict)
+
+ class method, static method
+ @classmethod
+ def set_raise_amt(class,amount):
+    cls.raise_amt = amount
+# alternative constructor
+ @classmethod
+ def from_string(cls, emp_str):
+    first , last, pay = emp_str.split('-')
+    return cls(first, last, pay)
+
+ @staticmethod
+ def is_workday(day):
+    if day.weekday() == 5:
+        return False
+     return True
+
+Subclass:
+
+class Developer(Employee):
+    raise_amt = 1.10
+
+print(help(Developer))
+

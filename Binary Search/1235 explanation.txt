@@ -1,0 +1,20 @@
+Best method so far
+1.	Sort job by end time
+2.	Create dp [[0,0]]
+3.	For loop (s,e,p)
+a.	Use bisect to find a end time in dp such that it is less than or equal to existing start time +1 in loop  we call this i.
+b.	If new profit greater than or equal to existing last one in dp, append it to latest
+4.	Return dp[-1][1]
+
+Slower alternative
+1.	Sort  jobs by start time
+2.	Create cache {}
+3.	Dfs (i):
+a. base case: if i == len(jobs): return 0  break or no jobs (len(jobs)==0)
+b.	Don’t include i: dfs(i+1)
+c.	Include i: I in cache, return cache[i]
+d.	Include i: Use bisect prevent TLE
+-	Bisect(jobs, jobs[i][1], -1 , -1))
+-	Cache[i] = res = max(res, dfs(j) + jobs[i][2]
+e.	Return res
+4.	Return dfs(0)

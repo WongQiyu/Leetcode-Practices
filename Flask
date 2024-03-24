@@ -1,0 +1,25 @@
+import Flask
+
+Part 1
+terminal:
+flask run
+
+or python flaskblog.py
+
+.py
+from flask import Flask, render template
+app = Flask(__name__)
+
+posts= [{'author':'Cory', 'content':'First BP'}]
+
+@app.route("/")
+def hello():
+    #return "<h1> Home</h1>"
+    return render_template('_home.html_', title = "HOME")
+
+@app.route("/about)
+def about():
+    return "<h1> About</h1>"
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -1,0 +1,32 @@
+Course Schedule
+1. Create adjacency list of course which have 'key' as prerequisite before taking edge
+2. init state = [0] * numCourses
+3. state 0 --> not visited
+state -1 --> visited while checking cycle
+state 1 --> have visited and completed checking adjacency list
+4. If cycle detected it means that courses taken cannot follow an order where prerequisites are first cleared
+5. for all vertices, check if hasCycle
+6. if hasCycle, return False else True
+
+can use khan topo.. without a topo list
+1. Use step 1 & 2 above
+2. state is now used as to check number of prerequiste a course has
+for all vertices state[v] += # of prerequsite needed to be taken before taking the course
+3. q: add those whose state[v] == 0 : i.e. no prequisite. no need init a topo
+4. init count
+5. while q:
+- v = popleft (add to topo v but not required)
+count -= 1
+- for w in adj_list:
+- state[w] -= 1 (cleared 1 prereq)
+- if state[w] == 0 --> append w to q
+- return True iif numCOurses == count
+
+Number of island [DFS]
+No need create a checker
+Mark grid as 0 when visited
+init count =0
+for i in range row and j in range col --> loop thru and dfs
+aft dfs(i,j): count += 1
+
+
