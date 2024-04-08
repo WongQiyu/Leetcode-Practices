@@ -8,6 +8,10 @@ class Solution:
         no_max_occurrence = sum((1 for task, occurrence in counter.items() if occurrence == max_occurrence))
         max_interval = (max_occurrence-1) * (n+1) + no_max_occurrence
         return max(max_interval, len(tasks))
+'''
+Time Complexity: O(m)
+Space Complexity: O(m)
+'''
 if __name__ == '__main__':
     for i in range(9, 3, -1):
         print(i)

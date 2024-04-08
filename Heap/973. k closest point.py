@@ -13,6 +13,10 @@ class Solution:
         for _ in range(k):
             final.append(heappop(res)[1])
         return final
+'''
+Time Complexity: O(n + k log n)
+Space Complexity: O(n + k)
+'''
 if __name__ == '__main__':
     print(Solution().kClosest([[3,3],[5,-1],[-2,4]],2))
 
