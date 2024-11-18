@@ -21,6 +21,8 @@ class Solution:
             curr.next = prev
             prev = curr
         return prev
+
+# how to find kth element from back of linked list: 2 pointer
 if __name__ == '__main__':
     ln = ListNode(1, ListNode(2, ListNode(3)))
     print(Solution().reverseList(ln).val)

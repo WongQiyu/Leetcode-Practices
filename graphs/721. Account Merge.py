@@ -1,9 +1,9 @@
 from collections import defaultdict
 class Solution:
     def accountsMerge(self, accounts):
-        kv = defaultdict
-        for a in accounts:
-            if a[0] not in kv:
-                kv[a[0]] = [a[1:]]
-                continue
-            for kv
+        storage = defaultdict()
+        for account in accounts:
+            if storage.get(account[0]):
+                storage[account[0]] = storage[account[0]].append(account[1])
+
+

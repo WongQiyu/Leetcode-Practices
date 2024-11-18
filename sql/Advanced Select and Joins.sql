@@ -36,7 +36,7 @@ on p1.product_id = p2.product_id;
 select person_name from
 (select person_name, turn, weight, sum(weight)
 over(order by turn) as total from queue ) as tmp where total <= 1000
-order by total desc limit 1
+order by total desc limit 1;
 /*
 SELECT Date, Sales,
 SUM(Sales)

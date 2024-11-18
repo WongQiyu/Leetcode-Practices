@@ -25,3 +25,25 @@ if __name__ == '__main__':
     s = Solution()
     print(s.spiralOrder([[1,2,3],[4,5,6],[7,8,9]]))
     print(s.spiralOrder([[1, 2, 3,4], [5, 6,7,8], [9, 10, 11,12]]))
+
+
+    def lund(numbers):
+        checksum = numbers % 10
+        numbers //= 10
+        total = 0
+        is_odd = True
+        while numbers:
+            digi = numbers % 10
+            numbers = numbers // 10
+            if is_odd:
+                if digi >= 10:
+                    total += digi * 2 % 10 + 1
+                else:
+                    total += digi * 2
+                is_odd = False
+            else:
+                total += digi
+                is_odd = True
+        return total % 10 == checksum
+    print(lund(12345674))
+

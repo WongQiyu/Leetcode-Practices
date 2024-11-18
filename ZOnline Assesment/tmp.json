@@ -1,0 +1,60 @@
+
+//user
+{
+  "id": "2306",
+  "name": "AbnormalSec",
+  "first_name": "Abnormal",
+  "last_name": "Security",
+  "personal_email": "abnormalsecurity@gmail.com",
+  "addresses": [
+    "first_address, India",
+    "second_address, US"
+  ],
+  "contact_details": {
+    "phone_number": "xyz",
+    "emergency_contact": {
+      "name": "Emergency",
+      "phone_number": "abc",
+      "relation": null
+    }
+  }
+}
+
+//mapping
+
+{
+  "user": {
+    "google": {
+      "name": "displayName",
+      "first_name": "firstName",
+      "last_name": "lastName",
+      "personal_email": "email"
+    },
+    "okta": {
+      "user_name": "displayName",
+      "firstname": "firstName",
+      "lastname":  "lastName",
+      "business_email": "email"
+    }
+  }
+}
+
+//output
+{
+  "id": "2306", //user table
+  "displayName": "AbnormalSec", //mapping
+  "firstName": "Abnormal",
+  "lastName": "Security",
+  "email": "abnormalsecurity@gmail.com",
+  "addresses": ["first_address, India", "second_address, US"],
+  "contact_details": {
+    "phone_number": "xyz",
+    "emergency_contact": {
+      "name": "Emergency",
+      "phone_number": "abc",
+      "relation": null
+    }
+  }
+}
+
+

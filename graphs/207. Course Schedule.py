@@ -3,6 +3,7 @@ from collections import deque
 class Solution:
     def canFinish(self, numCourses, prerequisites):
         adj_lst = [[] for _ in range(numCourses)]
+        #v is the prerequisite
         for u, v in prerequisites:
             adj_lst[v].append(u)
         state = [0] * numCourses
